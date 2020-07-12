@@ -48,8 +48,7 @@ describe("/math", () => {
     });
     it("should just return 1 number", async () => {
       const res = await request(server).post("/math/product").send([2]);
-      expect(res.statusCode).toEqual(200);
-      expect(res.body).toEqual({ product: 2 });
+      expect(res.statusCode).toEqual(400);
     });
     it("should multiply 2 numbers", async () => {
       const res = await request(server).post("/math/product").send([1, 2]);
